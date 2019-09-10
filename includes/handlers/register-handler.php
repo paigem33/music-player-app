@@ -18,9 +18,6 @@
         return $inputText;
     }
 
-    if(isset($_POST['loginButton'])){
-       //login button pressed
-    }
 
     if(isset($_POST['signupButton'])){
         //register button pressed
@@ -31,7 +28,15 @@
         $email2 = sanitizeFormString($_POST['email2']);
         $password = sanitizeFormPassword($_POST['password']);
         $password2 = sanitizeFormPassword($_POST['password2']);
+
+        //called the register function in side the class
+        //we can still use this variable because we created it in the file above this one
+        $wasSeccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
         
+        if($wasSeccessful){
+            //takes you to what ever page you say 
+            header("Location: index.php");
+        }
      }
 
 ?>

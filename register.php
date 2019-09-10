@@ -1,3 +1,14 @@
+<?php 
+    include("includes/classes/Account.php");
+
+        //creates a new instance of the class
+        $account = new Account();
+
+    include("includes/handlers/register-handler.php");
+    include("includes/handlers/login-handler.php");
+?>
+
+
 <!DOCTYPE html> 
 <html lang="en">
 <head>
