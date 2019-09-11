@@ -1,5 +1,6 @@
 <?php 
     include("includes/classes/Account.php");
+    include("includes/classes/Constants.php");
 
         //creates a new instance of the class
         $account = new Account();
@@ -30,21 +31,30 @@
 
         <form action="register.php" id="register" method="POST">
             <h2>Create your free account</h2>
+
+            <?php echo $account->getError(Constants::$usernameLength); ?>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Username" required>
 
+            <?php echo $account->getError(Constants::$firstNameLength); ?>
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
 
+            <?php echo $account->getError(Constants::$lastNameLength); ?>
             <label for="lastName">Last Name</label>
             <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
 
+            <?php echo $account->getError(Constants::$emailInvalid); ?>
+            <?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
             <label for="Email">Email</label>
             <input type="email" id="email" name="email" placeholder="Email" required>
 
             <label for="email2">Confirm Email</label>
             <input type="email" id="email2" name="email2" placeholder="Confirm Email" required>
 
+            <?php echo $account->getError(Constants::$passwordsLength); ?>
+            <?php echo $account->getError(Constants::$passwordsNotAlphanumeric); ?>
+            <?php echo $account->getError(Constants::$passwordsDoNotMatch); ?>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Password" required>
 
