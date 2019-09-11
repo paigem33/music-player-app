@@ -65,7 +65,7 @@
                 array_push($this->errorArray, "Your passwords don't match");
                 return;
             }
-            if(preg_match('/[^A-Za-z0-9]/'), $pw){
+            if(preg_match('/[^A-Za-z0-9]/', $pw)){
                 //TODO: Change to require a special char
                 array_push($this->errorArray, "Your passwords can only contain numbers and letters");
                 return;
