@@ -7,6 +7,12 @@
 
     include("includes/handlers/register-handler.php");
     include("includes/handlers/login-handler.php");
+
+    function getInputValue($name){
+        if(isset($_POST[$name])) {
+            echo $_POST[$name];
+        }
+    }
 ?>
 
 
@@ -34,23 +40,23 @@
 
             <?php echo $account->getError(Constants::$usernameLength); ?>
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="text" id="username" name="username" placeholder="Username" required value="<?php getInputValue('username'); ?>">
 
             <?php echo $account->getError(Constants::$firstNameLength); ?>
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required value="<?php getInputValue('firstName'); ?>">
 
             <?php echo $account->getError(Constants::$lastNameLength); ?>
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required value="<?php getInputValue('lastName'); ?>">
 
             <?php echo $account->getError(Constants::$emailInvalid); ?>
             <?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
             <label for="Email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="email" id="email" name="email" placeholder="Email" required value="<?php getInputValue('email'); ?>">
 
             <label for="email2">Confirm Email</label>
-            <input type="email" id="email2" name="email2" placeholder="Confirm Email" required>
+            <input type="email" id="email2" name="email2" placeholder="Confirm Email" required value="<?php getInputValue('email2'); ?>">
 
             <?php echo $account->getError(Constants::$passwordsLength); ?>
             <?php echo $account->getError(Constants::$passwordsNotAlphanumeric); ?>
