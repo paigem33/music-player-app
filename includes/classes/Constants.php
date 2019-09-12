@@ -9,5 +9,6 @@
         public static $usernameLength ="Your username must be between 5 and 25 characters";
         public static $firstNameLength ="Your first name must be between 2 and 25 characters";
         public static $lastNameLength ="Your last name must be between 2 and 25 characters";
+        public static $usernameTaken = "This username is already in use";
     }
 ?>

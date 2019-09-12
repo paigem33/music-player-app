@@ -33,7 +33,7 @@
         //we can still use this variable because we created it in the file above this one
         $wasSeccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
         
-        if($wasSeccessful){
+        if($wasSeccessful == true){
             //takes you to what ever page you say 
             header("Location: index.php");
         }

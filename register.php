@@ -1,9 +1,10 @@
 <?php 
+    include("includes/config.php");
     include("includes/classes/Account.php");
     include("includes/classes/Constants.php");
 
         //creates a new instance of the class
-        $account = new Account();
+        $account = new Account($con);
 
     include("includes/handlers/register-handler.php");
     include("includes/handlers/login-handler.php");
@@ -39,6 +40,7 @@
             <h2>Create your free account</h2>
 
             <?php echo $account->getError(Constants::$usernameLength); ?>
+            <?php echo $account->getError(Constants::$usernameTaken); ?>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Username" required value="<?php getInputValue('username'); ?>">
 

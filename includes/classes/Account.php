@@ -1,9 +1,11 @@
 <?php
     class Account {
 
+        private $con;
         private $errorArray;
 
-        public function __construct(){
+        public function __construct($con){
+            $this->con = $con;
             $this->errorArray = array();
         }
         //register is a public function becasue it is the one we will be calling from a different file
@@ -17,7 +19,7 @@
 
             if(empty($this->errorArray) == true){
                 //insert into db
-                return true;
+                return $this->insertUserDetails($username, $firstName, $lastName, $em, $em2, $pw, $pw2);
             } else {
                 return false;
             }
@@ -30,6 +32,17 @@
             return "<span class='errorMessage'>$error</span>";
         }
 
+        private function insertUserDetails($username, $firstName, $lastName, $em, $pw){
+            $encryptedPw = md5($pw); //password -> hgieugeigirgdh
+            $profilePic = "assets/images/profilePic.png";
+            $date = date("Y-m-d");
+
+            //returns true or false based on if it worked or not
+            $result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$username', '$firstName', '$lastName', '$em', '$encryptedPw', '$date', '$profilePic')");
+
+            return $result;
+        }
+
         //private means it can only be called within this class
         private function validateUsername($username){
             
@@ -38,7 +51,11 @@
                 array_push($this->errorArray, Constants::$usernameLength);
                 return;
             }
-            //TODO: check if username already exists
+            $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$username'");
+            if(mysqli_num_rows($checkUsernameQuery)!= 0){
+                array_push($this->errorArray, Constants::$usernameTaken);
+                return;
+            }
 
         }
 
@@ -65,7 +82,11 @@
                 array_push($this->errorArray, Constants::$emailInvalid);
                 return;
             }
-            //TODO: check that email is not already in use
+            $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$username'");
+            if(mysqli_num_rows($checkUsernameQuery)!= 0){
+                array_push($this->errorArray, Constants::$usernameTaken);
+                return;
+            }
         }
 
         private function validatePassword($pw, $pw2){
