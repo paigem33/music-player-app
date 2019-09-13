@@ -24,22 +24,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
+    <link rel="stylesheet" href="assets/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/scripts/register.js"></script>
 </head>
 <body>
+
+    <?php
+        if(isset($_POST['signupButton'])){
+            echo '<script>
+                    $(document).ready(function(){
+                        $("#login").hide();
+                        $("#register").show();
+                    }); 
+                 </script>';
+        } else {
+            echo '<script>
+                    $(document).ready(function(){
+                        $("#login").show();
+                        $("#register").hide();
+                    });
+                </script>';
+        };
+    ?>
+    
+
     <div id="inputContainer">
+        <div class="hasAccount">
+            <span id="loginForm">Sign in</span>
+        </div>
+        <div class="hasAccount">
+            <span id="registerForm">Sign up</span>
+        </div>
         <form action="register.php" id="login" method="POST">
-            <h2>Login to your account</h2>
             <?php echo $account->getError(Constants::$loginFailed); ?>
             <label for="loginUsername">Username</label>
-            <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
+            <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required value="<?php getInputValue('loginUsername'); ?>">
             <label for="loginPassword">Password</label>
             <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
             <button type="submit" name="loginButton">Login</button>
+
+            
         </form>
 
         <form action="register.php" id="register" method="POST">
-            <h2>Create your free account</h2>
-
             <?php echo $account->getError(Constants::$usernameLength); ?>
             <?php echo $account->getError(Constants::$usernameTaken); ?>
             <label for="username">Username</label>
@@ -72,6 +100,8 @@
             <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
 
             <button type="submit" name="signupButton">Signup</button>
+
+
         </form>
     </div>
 </body>

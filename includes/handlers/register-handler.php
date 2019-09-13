@@ -35,7 +35,7 @@
         
         if($wasSeccessful){
             //takes you to what ever page you say 
-            // $_SESSION['userLogginIn'] = $username;
+            $_SESSION['userLogginIn'] = $username;
             header("Location: index.php");
         }
      }

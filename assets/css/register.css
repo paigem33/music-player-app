@@ -1,0 +1,7 @@
+body {
+  background-image: linear-gradient(rgba(0, 77, 153, .6), rgba(0, 77, 153, .6)), url(../images/cityImg.jpg);
+}
+}
+#register, #login {
+    display: none;
+}

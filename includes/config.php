@@ -3,7 +3,7 @@
     ob_start();
 
     //without this the sessions wont work, and you need sessions to track if the user is logged in
-    // session_start();
+    session_start();
 
     $timezone = date_default_timezone_set("America/Los_Angeles");
 
