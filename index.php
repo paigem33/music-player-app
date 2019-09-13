@@ -1,3 +1,17 @@
+<?php
+
+    //brings in session start method
+    include("includes/config.php");
+
+    // session_destroy();
+
+    // if(isset($_SESSION['userLoggedIn'])){
+    //     $userLoggedIn = $_SESSION['userLoggedIn'];
+    // } else {
+    //     header("Location: register.php");
+    // }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +20,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head> 
-    <h1>Hello</h1>
+    <h1>Index Page</h1>
 </body>
 </html>

@@ -29,6 +29,7 @@
     <div id="inputContainer">
         <form action="register.php" id="login" method="POST">
             <h2>Login to your account</h2>
+            <?php echo $account->getError(Constants::$loginFailed); ?>
             <label for="loginUsername">Username</label>
             <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
             <label for="loginPassword">Password</label>
@@ -54,6 +55,7 @@
 
             <?php echo $account->getError(Constants::$emailInvalid); ?>
             <?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
+            <?php echo $account->getError(Constants::$usernameTaken); ?>
             <label for="Email">Email</label>
             <input type="email" id="email" name="email" placeholder="Email" required value="<?php getInputValue('email'); ?>">
 
