@@ -1,7 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   background-image: linear-gradient(rgba(0, 77, 153, .6), rgba(0, 77, 153, .6)), url(../images/cityImg.jpg);
+  font-family: 'Raleway', sans-serif;
 }
+#inputContainer {
+  color: #fff;
+}
+.textBox {
+  margin: auto;
+  width: 90%;
+  border-bottom: solid 1px #fff;
+  padding: 15px 0;
+}
+.textBox h1, .textBox h2, .textBox h3 {
+  padding: 5px 0;
+}
+i {
+  padding-right: 5px;
+  color: #1a8cff;
+}
+.hasAccount {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: rgba(255, 255, 255, .5);
+}
+.hasAccount:nth-of-type(1){
+  padding-right: 10px;
+}
+.formButtons {
+  display: flex;
+  padding: 15px;
 }
 #register, #login {
     display: none;
+}
+.active {
+  color: #fff;
+  border-bottom: solid 3px #1a8cff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  color: #d9d9d9;
+  margin-top: 20px;
+}
+label {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-bottom: 5px;
+}
+input {
+  width: 75%;
+  display: block;
+  margin: auto;
+  height: 35px;
+  border: 0;
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  color: #fff;
+  padding-left: 5%;
+  font-size: 14px;
+}
+input:focus {
+  outline: none;
+}
+button {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  width: 80%;
+  background-color: #1a8cff;
+  display: block;
+  margin: 5px auto 0;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
 }
