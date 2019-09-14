@@ -53,8 +53,7 @@
                 </script>';
         };
     ?>
-    
-
+    <!-- TODO: fix toggle of active class on sign in sign up buttons -->
     <div id="inputContainer">
         <div class="textBox">
             <h1>Get great music,<br> right now</h1>
@@ -63,7 +62,7 @@
             <h3><i class="fas fa-check"></i>Create your own playlists</h3>
             <h3><i class="fas fa-check"></i>Follow artists to keep up to date</h3>
         </div>
-        <div>
+        <div class="formSection">
             <div class="formButtons">
                 <div class="hasAccount">
                     <span id="loginForm" class="active">Sign in</span>

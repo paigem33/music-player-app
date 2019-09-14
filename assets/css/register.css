@@ -3,11 +3,17 @@
   padding: 0;
 }
 body {
-  background-image: linear-gradient(rgba(0, 77, 153, .6), rgba(0, 77, 153, .6)), url(../images/cityImg.jpg);
+  background-image: linear-gradient(rgba(0, 77, 153, .6), rgba(0, 77, 153, .6)), url(../images/test2.jpg);
   font-family: 'Raleway', sans-serif;
+}
+.errorMessage {
+  width: 80%;
+  margin: auto;
+  color: red;
 }
 #inputContainer {
   color: #fff;
+  margin-bottom: 20px;
 }
 .textBox {
   margin: auto;
@@ -26,13 +32,16 @@ i {
   text-transform: uppercase;
   font-size: 24px;
   color: rgba(255, 255, 255, .5);
+  cursor: pointer;
 }
 .hasAccount:nth-of-type(1){
   padding-right: 10px;
 }
 .formButtons {
   display: flex;
-  padding: 15px;
+  width: 90%;
+  margin: auto;
+  padding: 15px 0;
 }
 #register, #login {
     display: none;
@@ -45,7 +54,6 @@ form {
   display: flex;
   flex-direction: column;
   color: #d9d9d9;
-  margin-top: 20px;
 }
 label {
   width: 80%;
@@ -80,4 +88,58 @@ button {
   height: 35px;
   border: none;
   border-radius: 15px;
+  transition: .2s
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #0080ff; 
+}
+@media screen and (min-width: 500px){
+  input {
+    width: 55%;
+  }
+  label {
+    width: 60%;
+  }
+  .textBox {
+    width: 60%;
+  }
+  .errorMessage {
+    width: 60%;
+  }
+  button {
+    width: 60%;
+  }
+  .formButtons {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1000px){
+  #inputContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .formSection {
+    padding-left: 10%;
+  }
+  .formSection, .textBox {
+    width: 50%;
+    margin-top: 100px
+  }
+  .textBox {
+    border-bottom: none;
+  }
+  .textBox h1 {
+    font-size: 48px;
+  }
+  .textBox h2 {
+    margin: 5px 0 10px;
+  }
+  .textBox i {
+    font-size: 30px;
+  }
 }
