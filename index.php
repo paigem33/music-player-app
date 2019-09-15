@@ -3,7 +3,6 @@
     //brings in session start method
     include("includes/config.php");
 
-    session_destroy();
 
     if(isset($_SESSION['userLoggedIn'])){
         $userLoggedIn = $_SESSION['userLoggedIn'];
@@ -19,7 +18,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head> 
-    <h1>Index Page</h1>
+    <div id="nowPlaying">
+        <div id="nowPlayingBar">
+            <div id="nowPlayingInner">
+
+            </div>
+            <div id="nowPlayingInner">
+                
+            </div>
+            <div id="nowPlayingInner">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
