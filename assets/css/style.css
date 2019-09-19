@@ -1,14 +1,18 @@
 * {
     padding: 0;
     margin: 0;
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
 }
+body {
+    /* TODO: fix gradient not showing */
+    background-image: linear-gradient(rgba(0, 77, 153, .6), rgba(0, 77, 153, .6)), url(../images/test2.jpg);
+    font-family: 'Raleway', sans-serif;
+    color:  #cccccc;
+  }
 #nowPlaying {
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: #262626; 
+    background-color: #1a1a1a; 
 }
 #nowPlayingBar {
     display: flex;
@@ -41,7 +45,7 @@
 }
 .fas, .far {
     font-size:40px;
-    color:#fff;
+    color: #cccccc;
     padding: 0 2px;
     cursor: pointer;
 }
@@ -69,7 +73,7 @@
     margin-top: 8px;
 }
 .progressBg {
-    background-color: #ffffff;
+    background-color: #cccccc;
     height: 4px;
     width: 100%;
     border-radius: 2px;
@@ -114,5 +118,62 @@
 @media only screen and (max-width: 690px){
     #nowPlayingBar {
         display: block;
+        height: 110px;
+        padding: 16px 0;
     }
+    #nowPlayingCenter {
+        width: 100%;
+    }
+    #nowPlayingRight {
+        display: none;
+    }
+    #nowPlayingLeft {
+        width: 100%;
+    }
+    #nowPlayingLeft img {
+        display: none;
+    }
+    .trackInfo {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .trackInfo span {
+        display: block;
+        font-size: 20px;
+    }
+    .trackInfo .trackName::after {
+        content: " | ";
+        padding: 0 7px 0 5px;
+    }
+    .progressTime {
+        display: none;
+    }
+    .fas, .far {
+        padding: 0 5px;
+    }
+    #nowPlayingCenter .progressBar {
+        position: relative;
+        top: -107px;
+    }
+    #nowPlayingCenter .progressBg {
+        border-radius: 0;
+        background-color: #404040;
+    } 
+    /* TODO: Fix delay on scroll */
+    .contentLeft {
+        position: relative;
+        -webkit-animation: scroll 30s infinite linear;;
+        -moz-animation: scroll 30s infinite linear;
+        -o-animation: scroll 30s infinite linear;
+        animation: scroll 30s infinite linear;
+      }
+      
+      @keyframes scroll{
+          0%   {left: 500px;}
+          100% {left: -950px;}
+      }
+      @-webkit-keyframes scroll{
+          0%   {left: 500px;}
+          100% {left: -950px;}
+      }
 }
