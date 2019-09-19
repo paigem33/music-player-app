@@ -42,6 +42,7 @@
                         <i class="far fa-pause-circle controlButton" title="Pause" style="display: none"></i>
                         <i class="far fa-arrow-alt-circle-right controlButton" 
                         title="Next"></i>
+                        <i class="fas fa-redo controlButton" title="Repeat"></i>
                     </div>
                     <div class="playbackBar">
                         <span class="progressTime current">0:00</span>

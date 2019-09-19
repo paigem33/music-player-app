@@ -20,7 +20,6 @@
     Width: 30%;
 }
 #nowPlayingRight {
-    position: relative;
     margin-top: 16px;
 }
 #nowPlayingCenter{
@@ -43,6 +42,18 @@
 .fas, .far {
     font-size:40px;
     color:#fff;
+    padding: 0 2px;
+    cursor: pointer;
+}
+.fa-redo {
+    font-size: 22px;
+    margin-top: 1px;
+}
+.fa-random {
+    font-size: 25px;
+}
+.fa-play-circle {
+    font-size: 50px;
 }
 .controlButton {
     vertical-align: middle;
@@ -55,6 +66,7 @@
     height: 12px;
     display: inline-flex;
     cursor: pointer;
+    margin-top: 8px;
 }
 .progressBg {
     background-color: #ffffff;
@@ -89,12 +101,18 @@
 .volumeBar {
     display: flex;
     align-items: center;
-    margin-left: 55%;
+    float: right;
 }
 .volumeBar .progressBar {
-    margin-top:7px
+    margin-top:7px;
+    width: 125px;
 }
 .volumeBar i {
     font-size: 30px;
     margin-right: 15px;
+}
+@media only screen and (max-width: 690px){
+    #nowPlayingBar {
+        display: block;
+    }
 }
