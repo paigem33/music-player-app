@@ -24,6 +24,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/scripts/index.js"></script>
 </head> 
+<div id="topContainer">
+        <nav class="navbar">
+            <a href="index.php" class="logo"><i class="fas fa-rocket"></i>Rocket Music</a>
+            <a href="search.php" class="search"><i class="fas fa-search"></i>Search</a>
+            <a href="borwse.php" class="navItem"><i class="fas fa-eye"></i>Browse</a>
+            <a href="yourMusic.php" class="navItem"><i class="fas fa-music"></i>Your Music</a>
+            <a href="profile.php" class="navItem"><i class="fas fa-user"></i>Profile</a>
+        </nav>
+    <div>
+
+    </div>
+</div>
     <div id="nowPlaying">
         <div id="nowPlayingBar">
             <div id="nowPlayingLeft">

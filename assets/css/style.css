@@ -11,7 +11,7 @@ body {
 #nowPlaying {
     width: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: 67px;
     background-color: #1a1a1a; 
 }
 #nowPlayingBar {
@@ -115,6 +115,30 @@ body {
     font-size: 30px;
     margin-right: 15px;
 }
+/* NAV */
+.navbar .logo {
+    display: none;
+}
+.navbar {
+    background-color: #1a1a1a; 
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.navbar a {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #cccccc;
+    text-align: center;
+    padding: 10px 0;
+}
+.navbar i {
+    padding-bottom: 3px;
+    font-size: 25px;
+}
 @media only screen and (max-width: 690px){
     #nowPlayingBar {
         display: block;
@@ -176,4 +200,15 @@ body {
           0%   {left: 500px;}
           100% {left: -950px;}
       }
+}
+@media only screen and (min-width: 690px) {
+    .navbar {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20%;
+    }
+    #nowPlaying {
+        bottom: 0;
+    }
 }
