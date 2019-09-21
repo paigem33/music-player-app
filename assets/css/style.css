@@ -193,12 +193,12 @@ body {
       }
       
       @keyframes scroll{
-          0%   {left: 500px;}
-          100% {left: -950px;}
+          0%   {left: 100vw;}
+          100% {left: -100vw;}
       }
       @-webkit-keyframes scroll{
-          0%   {left: 500px;}
-          100% {left: -950px;}
+          0%   {left: 100vw;}
+          100% {left: -100vw;}
       }
 }
 @media only screen and (min-width: 690px) {
@@ -207,6 +207,33 @@ body {
         left: 0;
         height: 100%;
         width: 20%;
+        flex-direction: column;
+        padding: 16px;
+    }
+    .navbar a {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar a:hover {
+        color: #fff;
+    }
+    .navbar .logo:hover {
+        color: #cccccc;
+    }
+    .navbar .logo {
+        display: flex;
+        border-bottom: solid 2px #cccccc;
+        margin-bottom: 5px;
+    }
+    .navbar .logo:hover {
+        color: 
+    }
+    .navbar .logo i, .navbar .logo {
+        font-size: 30px;
+    }
+    .navbar i {
+        padding-right: 10px;
     }
     #nowPlaying {
         bottom: 0;
