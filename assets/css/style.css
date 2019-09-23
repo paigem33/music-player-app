@@ -2,11 +2,13 @@
     padding: 0;
     margin: 0;
 }
+
 body {
     /* TODO: fix gradient not showing */
     background-image: linear-gradient(rgba(0, 77, 153, .6), rgba(0, 77, 153, .6)), url(../images/test2.jpg);
     font-family: 'Raleway', sans-serif;
     color:  #cccccc;
+    height: 100vh;
   }
 #nowPlaying {
     width: 100%;
@@ -34,6 +36,9 @@ body {
 }
 #nowPlayingBar .content {
     width: 100%;
+}
+#nowPlayingBar .progressBar {
+    padding: 0 5px;
 }
 .contentLeft {
     display: flex;
@@ -140,6 +145,9 @@ body {
     font-size: 25px;
 }
 @media only screen and (max-width: 690px){
+    #nowPlayingBar .progressBar {
+        padding: 0 0;
+    }
     #nowPlayingBar {
         display: block;
         height: 110px;
@@ -227,7 +235,7 @@ body {
         margin-bottom: 5px;
     }
     .navbar .logo:hover {
-        color: 
+        color: #cccccc;
     }
     .navbar .logo i, .navbar .logo {
         font-size: 30px;
@@ -238,4 +246,37 @@ body {
     #nowPlaying {
         bottom: 0;
     }
+}
+/* Main content */ 
+h1 {
+    text-align: center;
+    color: #fff;
+    padding: 15px 0 25px 0;
+}
+#mainContent {
+    margin-bottom: 170px;
+}
+#mainContent a {
+    text-decoration: none;
+    color: #fff;
+}
+.grid {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.gridItem {
+    min-height: 191px;
+    margin: auto;
+    width: 150px;
+    padding: 0 5px 15px;
+    text-align: center;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.gridItem img {
+    width: 150px;
 }
