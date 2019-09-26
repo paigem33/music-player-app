@@ -280,3 +280,24 @@ h1 {
 .gridItem img {
     width: 150px;
 }
+@media only screen and (min-width: 690px) {
+    #mainContent {
+        margin-left: 24%;
+        margin-right: 1%;
+    }
+    #mainContent h1 {
+        margin-bottom: 20px;
+    }
+    .gridItem {
+        width: 200px;
+        transform: scale(1);
+        transition: .3s;
+    }
+    .gridItem:hover {
+        transform: scale(1.1);
+    }
+    .gridItem img {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+}
