@@ -253,9 +253,7 @@ h1 {
     color: #fff;
     padding: 15px 0 25px 0;
 }
-#mainContent {
-    margin-bottom: 170px;
-}
+
 #mainContent a {
     text-decoration: none;
     color: #fff;
@@ -300,4 +298,15 @@ h1 {
         width: 200px;
         margin-bottom: 10px;
     }
+}
+/* ALBUM PAGE */
+.albumHeader img {
+    width: 175px;
+}
+.albumHeader {
+    text-align: center;
+    padding-top: 15px;
+}
+.albumHeader h1 {
+    padding: 5px 0 5px 0;
 }
