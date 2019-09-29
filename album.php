@@ -19,6 +19,29 @@
         <h2>By <?php echo $artist->getName(); ?></h2>
         <p><?php echo $album->getSongs(); ?> song(s)</p>
     </div>
+    <ul class="albumContent">
+
+        <?php
+           $songIdArray = $album->getSongIds();
+           $i = 1;
+           foreach($songIdArray as $songId){
+               $albumSong = new Song($con, $songId);
+               $albumArtist = $album->getArtist();
+               echo "<li>
+                        <div>
+                            <i class='fas fa-play'></i>
+                            <span>$i</span>
+                        </div>
+                        <div>
+                            <span class='title'>" . $albumSong->getTitle() . "</span>
+                            <span class='artist'>" . $albumArtist->getName() . "</span>
+                        </div>
+                    </li>";
+           }
+           $i++;
+        ?>
+    
+    </ul>
 </div>
 
     
