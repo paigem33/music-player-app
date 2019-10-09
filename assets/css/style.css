@@ -352,6 +352,7 @@ h1 {
 }
 @media only screen and (min-width: 690px){
     /* TODO: fix hover problem/spacing on album row elements */
+    /* TODO: fix dash placement on artist name */
     .albumHeader {
         display: flex;
         justify-content: center;
