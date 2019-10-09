@@ -36,7 +36,7 @@
                         </div>
                         <div>
                             <span class='title'>" . $albumSong->getTitle() . "</span>
-                            <span class='artist'> - " . $albumArtist->getName() . "</span>
+                            <span class='artist'>" . $albumArtist->getName() . "</span>
                         </div>
                         <div>
                             <i class='fas fa-ellipsis-h'></i>

@@ -322,6 +322,7 @@ h1 {
 }
 .albumContent .fas.fa-ellipsis-h {
     font-size: 20px;
+    padding-right: 7px;
 }
 .albumContent {
     padding: 15px;
@@ -330,7 +331,12 @@ h1 {
     font-size: 30px;
 }
 .albumInfo .artist {
+    padding-top: 2px;
     font-size: 16px;
+}
+.albumInfo .artist::before {
+    content: "- ";
+    padding-left: 5px;
 }
 .albumContent li  {
     display: flex;
@@ -351,8 +357,7 @@ h1 {
     padding: 7px 0 0 7px;
 }
 @media only screen and (min-width: 690px){
-    /* TODO: fix hover problem/spacing on album row elements */
-    /* TODO: fix dash placement on artist name */
+    /* TODO: fix list of songs on ablum page at tablet */
     .albumHeader {
         display: flex;
         justify-content: center;
@@ -360,6 +365,9 @@ h1 {
         text-align: left;
         margin-bottom: 20px;
         padding-top: 20px;
+    }
+    .albumHeader h1 {
+        text-align: left;
     }
     .albumHeader img {
         width: 200px;

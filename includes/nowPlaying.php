@@ -1,3 +1,30 @@
+<?php 
+
+    $songQuery = mysqli_query($con, "SELECT id FROM Songs ORDER BY RAND() LIMIT 10");
+    $result_array = array();
+    while($row = mysqli_fetch_array($songQuery)){
+        array_push($result_array, $row['id']);
+    }
+
+    $jsonArray = json_encode($result_array);
+
+?>
+
+<script>
+    $(document).ready(function(){
+        currentPlaylist = <?php $jsonArray; ?>
+        audioElement = new Audio();
+        setTrack(currentPlaylist[0], currentPlaylist, true)
+    });
+
+    function setTrack(trackId, newPlaylist, play){
+        audioElement.setTrack("assets/music/bensound-happyrock.mp3")
+        if(play == true) {
+            audioElement.play();
+        }
+    }
+</script>
+
 <div id="nowPlayingBar">
     <div id="nowPlayingLeft">
         <div class="content contentLeft">
