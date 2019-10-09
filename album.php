@@ -15,9 +15,11 @@
 <div class="albumInfo">
     <div class="albumHeader"> 
         <img src="<?php echo $album->getArtworkPath(); ?>" alt="">
+        <div>
         <h1><?php echo $album->getTitle(); ?></h1>
         <h2>By <?php echo $artist->getName(); ?></h2>
         <p><?php echo $album->getSongs(); ?> song(s)</p>
+        </div>
     </div>
     <ul class="albumContent">
 
@@ -30,15 +32,22 @@
                echo "<li>
                         <div>
                             <i class='fas fa-play'></i>
-                            <span>$i</span>
+                            <span class='number'>$i.</span>
                         </div>
                         <div>
                             <span class='title'>" . $albumSong->getTitle() . "</span>
-                            <span class='artist'>" . $albumArtist->getName() . "</span>
+                            <span class='artist'> - " . $albumArtist->getName() . "</span>
+                        </div>
+                        <div>
+                            <i class='fas fa-ellipsis-h'></i>
+                        </div>
+                        <div>
+                            <span class='duration'>" . $albumSong->getDuration() . "</span>
                         </div>
                     </li>";
+                    $i++;
            }
-           $i++;
+           
         ?>
     
     </ul>
