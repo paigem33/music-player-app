@@ -18,10 +18,22 @@
     });
 
     function setTrack(trackId, newPlaylist, play){
-        audioElement.setTrack("assets/music/bensound-happyrock.mp3")
-        if(play == true) {
+        $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
+            console.log(data)
+        });
+        if(play) {
             audioElement.play();
         }
+    }
+    function playSong(){
+        $(".far.fa-play-circle.controlButton").hide()
+        $(".far.fa-pause-circle.controlButton").show()
+        audioElement.play();
+    }
+    function pauseSong(){
+        $(".far.fa-play-circle.controlButton").show()
+        $(".far.fa-pause-circle.controlButton").hide()
+        audioElement.pause();
     }
 </script>
 
@@ -40,8 +52,8 @@
             <div class="buttons">
                 <i class="fas fa-random controlButton" title="Shuffle"></i>
                 <i class="far fa-arrow-alt-circle-left controlButton" title="Previous"></i>
-                <i class="far fa-play-circle controlButton" title="Play"></i>
-                <i class="far fa-pause-circle controlButton" title="Pause" style="display: none"></i>
+                <i class="far fa-play-circle controlButton" title="Play" onClick="playSong()"></i>
+                <i class="far fa-pause-circle controlButton" title="Pause" onClick="pauseSong()" style="display: none"></i>
                 <i class="far fa-arrow-alt-circle-right controlButton" 
                 title="Next"></i>
                 <i class="fas fa-redo controlButton" title="Repeat"></i>

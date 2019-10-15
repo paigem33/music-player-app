@@ -64,6 +64,9 @@ body {
 .fa-play-circle {
     font-size: 50px;
 }
+.fa-pause-circle {
+    font-size: 50px;
+}
 .controlButton {
     vertical-align: middle;
 }
