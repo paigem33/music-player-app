@@ -18,6 +18,7 @@
     });
 
     function setTrack(trackId, newPlaylist, play){
+        // This is an Ajax call, you say what page the call to, what values do you want to pass through, and what you want to do with the information
         $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
             console.log(data)
         });
