@@ -1,29 +1,26 @@
 <?php 
-
     $songQuery = mysqli_query($con, "SELECT id FROM Songs ORDER BY RAND() LIMIT 10");
     $result_array = array();
     while($row = mysqli_fetch_array($songQuery)){
         array_push($result_array, $row['id']);
     }
-
     $jsonArray = json_encode($result_array);
-
+    //echo $jsonArray;
 ?>
 
 <script>
     $(document).ready(function(){
-        currentPlaylist = <?php $jsonArray; ?>
+        currentPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
-        setTrack(currentPlaylist[0], currentPlaylist, true)
+        setTrack(currentPlaylist[0], currentPlaylist, false)
     });
-
     function setTrack(trackId, newPlaylist, play){
         // This is an Ajax call, you say what page the call to, what values do you want to pass through, and what you want to do with the information
         $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
-            console.log(data)
+            console.log("data: " + data)
         });
         if(play) {
-            audioElement.play();
+            playSong();
         }
     }
     function playSong(){

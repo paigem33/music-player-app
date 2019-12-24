@@ -1,14 +1,11 @@
-
 <?php
 	class Album {
-
         private $con;
         private $id;
         private $title;
         private $artistId;
         private $genre;
         private $artworkPath;
-
 		public function __construct($con, $id) {
 			$this->con = $con;
             $this->id = $id;
@@ -20,7 +17,6 @@
             $this->artistId = $album['artist'];
             $this->genre = $album['genre'];
             $this->artworkPath = $album['artworkPath'];
-
         }
         //without the con it will be looking for a local variable called con, but there isnt one, this refers to a class variable
         public function getTitle(){
