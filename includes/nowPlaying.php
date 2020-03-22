@@ -17,13 +17,37 @@
     function setTrack(trackId, newPlaylist, play){
         // This is an Ajax call, you say what page the call to, what values do you want to pass through, and what you want to do with the information
         $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data){
-            console.log("data: " + data)
+
+            var track = JSON.parse(data);
+
+            $(".trackName").text(track.title);
+            
+            console.log(track)
+
+            $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data){
+                var artist = JSON.parse(data);
+                console.log(artist.name);
+
+                $(".artistName").text(artist.name);
+            });
+
+            $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data){
+                var album = JSON.parse(data);
+
+                $("#nowPlayingLeft img").attr("src", album.artworkPath);
+            });
+
         });
         if(play) {
             playSong();
         }
     }
     function playSong(){
+        if(audioElement.audio.currentTime == 0){
+            console.log("update")
+        } else {
+            console.log('dont update')
+        }
         $(".far.fa-play-circle.controlButton").hide()
         $(".far.fa-pause-circle.controlButton").show()
         audioElement.play();
@@ -38,10 +62,10 @@
 <div id="nowPlayingBar">
     <div id="nowPlayingLeft">
         <div class="content contentLeft">
-            <img src="assets/images/album.png" alt="">
+            <img src="" alt="">
             <div class="trackInfo">
-                <span class="trackName">Ch-Check It Out</span>
-                <span class="artistName">Beastie Boys</span>
+                <span class="trackName"></span>
+                <span class="artistName"></span>
             </div>
         </div>
     </div>

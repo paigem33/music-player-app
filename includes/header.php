@@ -27,6 +27,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/scripts/index.js"></script>
     <script src="assets/scripts/script.js"></script>
+    
 </head> 
 <div id="topContainer">
         
